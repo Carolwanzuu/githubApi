@@ -8,11 +8,17 @@ import {UsersService} from '../users.service';
 })
 export class UserComponent implements OnInit {
 
+  users:any[]=[];
+
   constructor( private usersService:UsersService) { }
 
   ngOnInit() {
     this.usersService.getUsers()
-    
+    .subscribe((response:any)=>{
+      console.log('Users',response);
+      this.users=response.object;
+    })
+
   }
 
 }

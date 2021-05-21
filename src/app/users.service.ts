@@ -8,4 +8,8 @@ import {environment} from '../environments/environment';
 export class UsersService {
 
   constructor(private http:HttpClient) { }
+
+  getUsers(){
+    return this.http.get(`https://api.github.com/users/carolwanzuu?access_token=${environment.githubApiKey}`)
+  }
 }
