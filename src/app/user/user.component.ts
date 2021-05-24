@@ -14,16 +14,16 @@ export class UserComponent implements OnInit {
 
   users:UsersClass;
   
- users:any[]=[];
+   user:any[]=[];
 
   constructor( private usersService:UsersService) { }
 
   ngOnInit() {
-    this.usersService.getUsers()
-    .subscribe((response:any)=>{
-      console.log('Users',response);
-      this.users=response.object;
-    })
+//     this.usersService.getUsers()
+//     .subscribe((response:any)=>{
+//       console.log('Users',response);
+//       this.users=response.object;
+//     })
 
   }
 
