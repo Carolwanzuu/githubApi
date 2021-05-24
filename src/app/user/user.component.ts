@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 
 import {UsersClass} from '../user/users-class';
 
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -13,31 +14,31 @@ export class UserComponent implements OnInit {
 
   users:UsersClass;
   
- // users:any[]=[];
+ users:any[]=[];
 
-  // constructor( private usersService:UsersService) { }
+  constructor( private usersService:UsersService) { }
 
-  // ngOnInit() {
-  //   this.usersService.getUsers()
-  //   .subscribe((response:any)=>{
-  //     console.log('Users',response);
-  //     this.users=response.object;
-  //   })
+  ngOnInit() {
+    this.usersService.getUsers()
+    .subscribe((response:any)=>{
+      console.log('Users',response);
+      this.users=response.object;
+    })
 
+  }
+
+  // constructor(private usersService:UsersService,private http:HttpClient){
+  //   this.users = usersService.getUsers()
   // }
-
-  constructor(private usersService:UsersService,private http:HttpClient){
-    //this.users = usersService.getUsers()
-  }
-  ngOnInit(){
-    interface ApiResponse{
-      name:string;
-      description:string;
-    }
-   this.http.get<ApiResponse>("https://api.github.com/users/carolwanzuu?access_token=${environment.githubApiKey}").subscribe(object=>{
-     this.users = new UsersClass(object.name, object.description)
-   })
+  // ngOnInit(){
+  //   interface ApiResponse{
+  //     name:string;
+  //     description:string;
+  //   }
+  //  this.http.get<ApiResponse>("https://api.github.com/users/carolwanzuu?access_token=${environment.githubApiKey}").subscribe(object=>{
+  //    this.users = new UsersClass(object.name, object.description)
+  //  })
   
-  }
+  // }
 
 }
