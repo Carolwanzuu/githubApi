@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import {UsersClass} from './user/users-class';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ export class UsersService {
 
   users:UsersClass;
   usersClass: any;
+  repos = new BehaviorSubject<any>([]);
 
   constructor(private http:HttpClient) {
     this.users = new UsersClass("","");
@@ -45,7 +47,7 @@ export class UsersService {
     return this.http.get(`https://api.github.com/users/carolwanzuu`);
   }
 
-  getRepos(repoName:string){
+  searchRepos(repoName:string){
     return this.http.get(`https://api.github.com/search/repositories?q={${repoName}}`)
   }
 }
