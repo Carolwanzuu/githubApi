@@ -13,17 +13,17 @@ import {UsersClass} from '../user/users-class';
 export class UserComponent implements OnInit {
 
   users:UsersClass;
-  
+
    user:any[]=[];
 
   constructor( private usersService:UsersService) { }
 
   ngOnInit() {
-//     this.usersService.getUsers()
-//     .subscribe((response:any)=>{
-//       console.log('Users',response);
-//       this.users=response.object;
-//     })
+    this.usersService.getProfile()
+    .subscribe((response:any)=>{
+      
+      this.users=response.object;
+    })
 
   }
 
