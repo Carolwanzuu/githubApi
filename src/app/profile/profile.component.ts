@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
     .subscribe((response:any)=>{
       
       this.profile=response;
-      console.log("profile", this.profile)
+      
     })
   }
 

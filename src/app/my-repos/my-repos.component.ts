@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../users.service';
+
 
 @Component({
   selector: 'app-my-repos',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyReposComponent implements OnInit {
 
-  constructor() { }
+  myRepos:any[]=[];
+  constructor(private usersService:UsersService) { }
 
   ngOnInit(): void {
+    this.usersService.getMyRepos()
+    .subscribe((response:any)=>{
+      
+      this.myRepos=response;
+      
+    })
+  }
   }
 
-}
+

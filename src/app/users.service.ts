@@ -49,6 +49,12 @@ export class UsersService {
      
   }
 
+
+  getMyRepos(){
+    return this.http.get(`https://api.github.com/users/carolwanzuu/repos`)
+     
+  }
+
   searchRepos(){
     return this.http.get(`https://api.github.com/repositories`)
     
