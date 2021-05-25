@@ -11,6 +11,7 @@ export class UsersService {
 
   users:UsersClass;
   usersClass: any;
+  
   repos = new BehaviorSubject<any>([]);
 
   constructor(private http:HttpClient) {
@@ -44,14 +45,19 @@ export class UsersService {
 
 
   getProfile(){
-    return this.http.get(`https://api.github.com/users/carolwanzuu`);
+    return this.http.get(`https://api.github.com/users/carolwanzuu`)
+     
   }
 
   searchRepos(){
     return this.http.get(`https://api.github.com/search/repositories`)
-   
+    
   }
 }
+
+
 //https://api.github.com/users/carolwanzuu?access_token=${environment.githubApiKey}`
 //https://api.github.com/search/users?access_token=${environment.githubApiKey}
 //(`https://api.github.com/search/repositories?q={${repoName}}`)
+//.subscribe((response:any)=>{
+ // this.repos.next(response.data)})
