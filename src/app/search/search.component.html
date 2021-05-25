@@ -1,7 +1,12 @@
+<app-navbar></app-navbar>
 <div class = "search">
     <h3>Search for Github Users</h3>
-    <input type="text" placeholder="Enter your username">
-    <p>{{otherUser.login}}</p>
-    <button>Submit</button>
+    <input type="text" placeholder="Enter your username" #user (keyup.enter)="searchUser(user.value)">
     
+    
+</div>
+<div *ngFor='let user of otherUsers'>
+    <ul>
+        <li> {{user.login}}</li>
+    </ul>
 </div>

@@ -50,7 +50,7 @@ export class UsersService {
   }
 
   searchRepos(){
-    return this.http.get(`https://api.github.com/search/repositories`)
+    return this.http.get(`https://api.github.com/repositories`)
     
   }
   getOtherUser(){

@@ -8,16 +8,20 @@ import { UsersService } from '../users.service';
 })
 export class SearchComponent implements OnInit {
 
-  otherUser:any=[];
+  otherUsers:any=[];
   constructor(private usersService:UsersService) { }
+
+  searchUser(submittedName:string){
+      console.log(submittedName);
+  }
 
   ngOnInit(): void {
     
       this.usersService.getOtherUser()
       .subscribe((response:any)=>{
         
-        this.otherUser=response;
-        console.log("Username", this.otherUser)
+        this.otherUsers=response;
+        console.log("Username", this.otherUsers)
       })
     }
   

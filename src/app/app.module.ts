@@ -10,6 +10,7 @@ import { RepositoriesComponent } from './repositories/repositories.component';
 import { SearchComponent } from './search/search.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MyReposComponent } from './my-repos/my-repos.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     RepositoriesComponent,
     SearchComponent,
     ProfileComponent,
-    NavbarComponent
+    NavbarComponent,
+    MyReposComponent
   ],
   imports: [
     BrowserModule,

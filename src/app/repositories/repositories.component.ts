@@ -17,9 +17,7 @@ export class RepositoriesComponent implements OnInit {
   }
   search(searchRepo:string){
     if(searchRepo !== ''){
-  //     this.usersService.searchRepos(searchRepo)
-  //     .subscribe((response:any)=>{
-  //       console.log('Search Data',response)
+  
   this.usersService.searchRepos()
     .subscribe((response:any)=>{
 
