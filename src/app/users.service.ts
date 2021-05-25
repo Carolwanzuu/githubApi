@@ -47,9 +47,11 @@ export class UsersService {
     return this.http.get(`https://api.github.com/users/carolwanzuu`);
   }
 
-  searchRepos(repoName:string){
-    return this.http.get(`https://api.github.com/search/repositories?q={${repoName}}`)
+  searchRepos(){
+    return this.http.get(`https://api.github.com/search/repositories`)
+   
   }
 }
 //https://api.github.com/users/carolwanzuu?access_token=${environment.githubApiKey}`
 //https://api.github.com/search/users?access_token=${environment.githubApiKey}
+//(`https://api.github.com/search/repositories?q={${repoName}}`)

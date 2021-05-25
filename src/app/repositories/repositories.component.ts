@@ -8,18 +8,30 @@ import {UsersService} from '../users.service';
 })
 export class RepositoriesComponent implements OnInit {
 
+  repos:any=[];
+
   constructor(private usersService:UsersService) { }
 
   ngOnInit(): void {
-  }
-
-  search(searchRepo:string){
-    if(searchRepo !== ''){
-      this.usersService.searchRepos(searchRepo)
-      .subscribe((response:any)=>{
-        console.log(response)
-      });
-    }
   
   }
+  search(searchRepo:string){
+    if(searchRepo !== ''){
+  //     this.usersService.searchRepos(searchRepo)
+  //     .subscribe((response:any)=>{
+  //       console.log('Search Data',response)
+  this.usersService.searchRepos()
+    .subscribe((response:any)=>{
+
+      this.repos = response;
+      console.log("repositories", this.repos)
+    })
+  }
+
+      
+  };
 }
+    
+    
+  
+

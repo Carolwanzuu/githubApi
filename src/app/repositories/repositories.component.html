@@ -1,4 +1,4 @@
 <div class ="search">
-    <input type="text" placeholder="Search for repositories" #repos (submit)= "search(repos.value)">
-    <button>Submit</button>
+    <input type="text" placeholder="Search for repositories" #repos (keyup.enter)= "search(repos.value)">
+    <!-- <button>Submit</button> -->
 </div>
