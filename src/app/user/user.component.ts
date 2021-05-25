@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
   ngOnInit() {
     this.usersService.getProfile()
     .subscribe((response:any)=>{
-      
+     
       this.users=response.object;
     })
 

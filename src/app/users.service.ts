@@ -54,7 +54,7 @@ export class UsersService {
     
   }
   getOtherUser(){
-    return this.http.get(``)
+    return this.http.get(`https://api.github.com/users`)
   }
 }
 
