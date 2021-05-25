@@ -53,6 +53,9 @@ export class UsersService {
     return this.http.get(`https://api.github.com/search/repositories`)
     
   }
+  getOtherUser(){
+    return this.http.get(``)
+  }
 }
 
 
