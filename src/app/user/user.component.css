@@ -5,3 +5,12 @@ h2{
     font-weight:900;
     padding-top: 15px;
 }
+.users{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 1000px;
+    margin: 0 auto;
+}
+.users img{
+    max-width: 250px;
+}
