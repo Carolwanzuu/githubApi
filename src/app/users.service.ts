@@ -87,7 +87,7 @@ export class UsersService {
     });
   }
   searchForUsers(userName:string){
-    return this.http.get(`https://api.github.com/search/users?q={${userName}}`) 
+    return this.http.get(`https://api.github.com/search/users?q=${userName}`) 
     .subscribe( (response:any) => {
       this.otherUsers.next(response.items)
     });

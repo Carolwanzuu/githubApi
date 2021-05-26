@@ -11,20 +11,13 @@ export class SearchComponent implements OnInit {
  
   constructor(private usersService:UsersService) { }
 
-  searchUser(submittedName:string){
-      console.log(submittedName);
+  
+  ngOnInit(): void {
   }
 
-  ngOnInit(): void {
-    
-    //   this.usersService.getOtherUser()
-    //   .subscribe((response:any)=>{
-        
-    //     this.otherUsers=response;
-    //     console.log("Username", this.otherUsers)
-    //   })
-    // }
-  
-  }
+  searchUsers(userName:string){
+    if(userName !== ''){
+      this.usersService.searchForUsers(userName)
+    }
 }
-  
+}
