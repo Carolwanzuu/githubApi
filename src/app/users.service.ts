@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {environment} from '../environments/environment';
+//import {environment} from '../environments/environment';
 import {UsersClass} from './user/users-class';
 import {BehaviorSubject} from 'rxjs';
 
@@ -19,28 +19,28 @@ export class UsersService {
    }
 
 
-  //  usersService(){
-  //    interface ApiResponse{
-  //      name:string;
-  //      description:string;
-  //    }
-  //    let promise = new Promise((resolve,reject)=>{
-  //      this.http.get<ApiResponse>("https://api.github.com/users/carolwanzuu?access_token=${environment.githubApiKey}").toPromise().then(response=>{
-  //         this.usersClass.name =response.name
-  //         this.usersClass.description = response.description
+   otherUsersRequest(){
+     interface ApiResponse{
+       name:string;
+       description:string;
+     }
+     let promise = new Promise((resolve,reject)=>{
+       this.http.get<ApiResponse>(`https://api.github.com/users`).toPromise().then(response=>{
+          this.usersClass.name =response.name
+          this.usersClass.description = response.description
+          console.log("otherUsers");
+          resolve("")
+       },
+       error=>{
+         this.usersClass.name = "Carol"
+         this.usersClass.description = "wrong destination"
 
-  //         resolve("")
-  //      },
-  //      error=>{
-  //        this.usersClass.name = "Carol"
-  //        this.usersClass.description = "wrong destination"
-
-  //        reject(error)
-  //      }
-  //      )
-  //    })
-  //    return promise
-  //  }
+         reject(error)
+       }
+       )
+     })
+     return promise
+   }
 
    //personal profile url endpoints
 
