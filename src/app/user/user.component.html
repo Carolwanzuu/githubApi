@@ -1,11 +1,13 @@
 <app-search></app-search>
 <h2>This is a List of Github Users</h2>
-<div class ="users">
-<ul>
+<div id="users" class ="row">
+    <div class = "column">
+  <ul>
     <li *ngFor="let user of otherUsers">
-       {{user.login}}
-       <img [src]="user.avatar_url" alt="">
-       
+      {{user.login}}
+      <img [src]="user.avatar_url" alt="">
+
     </li>
-</ul>
+  </ul>
+</div>
 </div>

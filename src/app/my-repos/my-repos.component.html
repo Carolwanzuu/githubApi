@@ -1,9 +1,12 @@
-<h1>My Repositories</h1>
-<div>
+<div class="container">
+  <div class="jumbotron">
+    <h1>My Repositories</h1>
+  </div>
+  <div>
     <ul>
-        <li *ngFor="let repo of myRepos">
-            {{repo.name}}
-        </li>
+      <li *ngFor="let repo of myRepos">
+        {{repo.name}}
+      </li>
     </ul>
+  </div>
 </div>
-
