@@ -14,6 +14,7 @@ import { MyReposComponent } from './my-repos/my-repos.component';
 import { SearchReposComponent } from './search-repos/search-repos.component';
 
 import { CapitalizePipe } from './capitalize.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CapitalizePipe } from './capitalize.pipe';
     NavbarComponent,
     MyReposComponent,
     SearchReposComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

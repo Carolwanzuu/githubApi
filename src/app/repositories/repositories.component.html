@@ -4,7 +4,7 @@
     <li *ngFor="let repo of repos">
         {{repo.id}}
         <br>
-        {{repo.name}}
+        {{repo.name|capitalize}}
     </li>
 </ul>
 
