@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
+import {CapitalizePipe} from '../capitalize.pipe';
 
 
 @Component({

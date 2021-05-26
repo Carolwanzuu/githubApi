@@ -12,7 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MyReposComponent } from './my-repos/my-repos.component';
 import { SearchReposComponent } from './search-repos/search-repos.component';
-import { DateCountPipe } from './date-count.pipe';
+
 import { CapitalizePipe } from './capitalize.pipe';
 
 @NgModule({
@@ -26,7 +26,6 @@ import { CapitalizePipe } from './capitalize.pipe';
     NavbarComponent,
     MyReposComponent,
     SearchReposComponent,
-    DateCountPipe,
     CapitalizePipe
   ],
   imports: [
