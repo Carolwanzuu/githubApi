@@ -8,7 +8,7 @@ import { UsersService } from '../users.service';
 })
 export class SearchComponent implements OnInit {
 
-  otherUsers:any=[];
+ 
   constructor(private usersService:UsersService) { }
 
   searchUser(submittedName:string){
@@ -17,13 +17,14 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     
-      this.usersService.getOtherUser()
-      .subscribe((response:any)=>{
+    //   this.usersService.getOtherUser()
+    //   .subscribe((response:any)=>{
         
-        this.otherUsers=response;
-        console.log("Username", this.otherUsers)
-      })
-    }
+    //     this.otherUsers=response;
+    //     console.log("Username", this.otherUsers)
+    //   })
+    // }
   
   }
+}
   

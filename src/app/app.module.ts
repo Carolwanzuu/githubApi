@@ -11,6 +11,7 @@ import { SearchComponent } from './search/search.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MyReposComponent } from './my-repos/my-repos.component';
+import { SearchReposComponent } from './search-repos/search-repos.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MyReposComponent } from './my-repos/my-repos.component';
     SearchComponent,
     ProfileComponent,
     NavbarComponent,
-    MyReposComponent
+    MyReposComponent,
+    SearchReposComponent
   ],
   imports: [
     BrowserModule,

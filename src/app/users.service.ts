@@ -12,7 +12,7 @@ export class UsersService {
   users:UsersClass;
   usersClass: any;
   
-  repos = new BehaviorSubject<any>([]);
+  
 
   constructor(private http:HttpClient) {
     this.users = new UsersClass("","");
@@ -42,7 +42,7 @@ export class UsersService {
   //    return promise
   //  }
 
-
+   //personal profile url endpoints
 
   getProfile(){
     return this.http.get(`https://api.github.com/users/carolwanzuu`)
@@ -55,14 +55,41 @@ export class UsersService {
      
   }
 
-  searchRepos(){
-    return this.http.get(`https://api.github.com/repositories`)
-    
+  repos = new BehaviorSubject<any>([])
+  getUsersRepos(){
+    return this.http.get(`https://api.github.com/search/repositories?q={query}`)
+    .subscribe((response:any) =>{
+      this.repos.next(response.items);
+    });
   }
-  getOtherUser(){
-    return this.http.get(`https://api.github.com/users`)
+
+  searchForARepo(repoName:string){
+    return this.http.get(`https://api.github.com/search/repositories?q={${repoName}}`) 
+    .subscribe( (response:any) => {
+      this.repos.next(response.items)
+    });
   }
+
+  getRepos(){
+    return this.repos.asObservable();
+  };
+
 }
+
+
+
+
+
+
+
+    //   searchRepos(){
+//     return this.http.get(`https://api.github.com/search/repositories`)
+    
+//   }
+//   getOtherUser(){
+//     return this.http.get(`https://api.github.com/users`)
+//   }
+// }
 
 
 //https://api.github.com/users/carolwanzuu?access_token=${environment.githubApiKey}`

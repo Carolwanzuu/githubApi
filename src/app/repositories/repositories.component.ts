@@ -13,23 +13,17 @@ export class RepositoriesComponent implements OnInit {
   constructor(private usersService:UsersService) { }
 
   ngOnInit(): void {
-  
-  }
-  search(searchRepo:string){
-    if(searchRepo !== ''){
-  
-  this.usersService.searchRepos()
+    this.usersService.getUsersRepos();
+    this.usersService.getRepos()
     .subscribe((response:any)=>{
-
-      this.repos = response;
-      console.log("repositories", this.repos)
+      this.repos=response
+      console.log(this.repos);
     })
-  }
 
-      
-  };
+  }
 }
+  
+  
     
     
   
-
