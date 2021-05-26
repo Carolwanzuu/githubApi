@@ -6,3 +6,11 @@ nav{
     font-size: 20px;
     font-weight:900;
 }
+h2{
+    font-size: 50px;
+    font-weight: 1200px;
+    font-style:inherit;
+    font-family: fantasy;
+    padding: 1%;
+    margin-left: 5%;
+}
