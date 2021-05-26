@@ -19,12 +19,11 @@ export class UserComponent implements OnInit {
   constructor( private usersService:UsersService) { }
 
   ngOnInit() {
-   
     this.usersService.getdiffUser();
     this.usersService.getUsers()
     .subscribe((response:any)=>{
       this.otherUsers=response
-      console.log(this.otherUsers);
+      console.log("UsersList-component",this.otherUsers);
     })
     }
 

@@ -78,13 +78,12 @@ export class UsersService {
 
 
   //getting users url
-
-  //otherUsers = new BehaviorSubject<any>([])
   otherUsers = new BehaviorSubject<any>([])
   getdiffUser(){
-    return this.http.get(`https://api.github.com/search/users?q={query}`)
+    return this.http.get(`https://api.github.com/users`)
     .subscribe((response:any) =>{
-      this.otherUsers.next(response.items);
+      this.otherUsers.next(response);
+      console.log("Users",response);
     });
   }
   searchForUsers(userName:string){
