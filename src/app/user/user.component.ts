@@ -14,31 +14,21 @@ export class UserComponent implements OnInit {
 
   users:UsersClass;
 
-   user:any[]=[];
+   otherUsers:any[]=[];
 
   constructor( private usersService:UsersService) { }
 
   ngOnInit() {
-    this.usersService.getProfile()
+   
+    this.usersService.getdiffUser();
+    this.usersService.getUsers()
     .subscribe((response:any)=>{
-     
-      this.users=response.object;
+      this.otherUsers=response
+      console.log(this.otherUsers);
     })
-
-  }
-
-  // constructor(private usersService:UsersService,private http:HttpClient){
-  //   this.users = usersService.getUsers()
-  // }
-  // ngOnInit(){
-  //   interface ApiResponse{
-  //     name:string;
-  //     description:string;
-  //   }
-  //  this.http.get<ApiResponse>("https://api.github.com/users/carolwanzuu?access_token=${environment.githubApiKey}").subscribe(object=>{
-  //    this.users = new UsersClass(object.name, object.description)
-  //  })
-  
-  // }
+    }
 
 }
+
+ 
+

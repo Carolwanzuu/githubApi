@@ -49,11 +49,12 @@ export class UsersService {
      
   }
 
-
   getMyRepos(){
     return this.http.get(`https://api.github.com/users/carolwanzuu/repos`)
      
   }
+
+  //getting repos url
 
   repos = new BehaviorSubject<any>([])
   getUsersRepos(){
@@ -74,10 +75,29 @@ export class UsersService {
     return this.repos.asObservable();
   };
 
+
+
+  //getting users url
+
+  //otherUsers = new BehaviorSubject<any>([])
+  otherUsers = new BehaviorSubject<any>([])
+  getdiffUser(){
+    return this.http.get(`https://api.github.com/search/users?q={query}`)
+    .subscribe((response:any) =>{
+      this.otherUsers.next(response.items);
+    });
+  }
+  searchForUsers(userName:string){
+    return this.http.get(`https://api.github.com/search/users?q={${userName}}`) 
+    .subscribe( (response:any) => {
+      this.otherUsers.next(response.items)
+    });
+  }
+  getUsers(){
+    return this.otherUsers.asObservable();
+  };
+
 }
-
-
-
 
 
 
