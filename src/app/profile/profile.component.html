@@ -1,10 +1,10 @@
 <h2>My Profile</h2>
 <div>
     <img [src]="profile.avatar_url" alt="image">
-    <p>{{profile.login}}</p>
-    <p>{{profile.id}}</p>
-    <p>{{profile.following_url}}</p>
-    <p>{{profile.public_repos}}</p>
+     <p><b>UserName:</b>  {{profile.login}}</p>
+    <p><b>ID:</b>  {{profile.id}}</p>
+    <p><b>My Repositories:</b>  {{profile.public_repos}}</p>
 
 </div>
+<br>
 <app-my-repos></app-my-repos>
