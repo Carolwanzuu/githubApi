@@ -4,6 +4,7 @@ h2{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight:900;
     padding-top: 15px;
+    margin: 5%;
 }
 .users{
     display: flex;
@@ -11,8 +12,11 @@ h2{
     width: 100%;
     margin: 0 auto;
 }
-.users img{
+img{
     width: 30%;
-    margin: 2%;
+    margin: 5%;
     float:left;
+}
+li{
+    font-size: 20px;
 }
